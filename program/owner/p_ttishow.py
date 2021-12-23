@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
 from config import ADMINS, LOG_CHANNEL, SUPPORT_CHAT
-from radio.database import db
+from program.database import db
 from database.ia_filterdb import Media
 from utils import get_size, temp
 from script import Script
