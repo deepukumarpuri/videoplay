@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from utils import temp
 from pyrogram.types import Message
-from radio.database import db
+from program.database import db
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import SUPPORT_CHAT
 async def banned_users(_, client, message: Message):
