@@ -16,7 +16,7 @@ from pyrogram.errors import (
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from config import BROADCAST_AS_COPY, GROUP_SUPPORT, UPDATES_CHANNEL, LOG_CHANNEL
-from radio.database import db, dcmdb
+from program.database import db, dcmdb
 
 
 async def handle_user_status(bot, cmd):
