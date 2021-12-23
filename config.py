@@ -46,3 +46,10 @@ P_TTI_SHOW_OFF = getenv("P_TTI_SHOW_OFF", "True")
 SPELL_CHECK_REPLY = getenv("SPELL_CHECK_REPLY", "True")
 SINGLE_BUTTON = getenv("SINGLE_BUTTON", "True")
 MAX_LIST_ELM = os
+OWNER_ID = int(os.environ.get("OWNER_ID"))
+ADMINS = int(os.environ.get("OWNER_ID"))
+# Bot settings
+
+CACHE_TIME = os.environ.get("CACHE_TIME", 300)
+USE_CAPTION_FILTER = os.environ.get("USE_CAPTION_FILTER", False)
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
