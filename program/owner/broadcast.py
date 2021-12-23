@@ -10,11 +10,11 @@ from config import (
     GROUP_SUPPORT,
     OWNER_ID,
 )
-from radio.song import get_text, humanbytes
-from radio.database import db
-from radio.dbtools import main_broadcast_handler
-from radio.decorators import sudo_users_only
-from radio.filters import command
+from program.song import get_text, humanbytes
+from program.database import db
+from program.dbtools import main_broadcast_handler
+from driver.decorators import sudo_users_only
+from driver.filters import command
 from pyrogram import Client, filters
 from pyrogram.types import Message
         
