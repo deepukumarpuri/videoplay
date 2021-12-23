@@ -1,5 +1,6 @@
 import os
 from os import getenv
+from os import environ
 from dotenv import load_dotenv
 
 if os.path.exists("local.env"):
@@ -27,3 +28,21 @@ IMG_1 = getenv("IMG_1", "https://telegra.ph/file/d6f92c979ad96b2031cba.png")
 IMG_2 = getenv("IMG_2", "https://telegra.ph/file/6213d2673486beca02967.png")
 IMG_3 = getenv("IMG_3", "https://telegra.ph/file/f02efde766160d3ff52d6.png")
 IMG_4 = getenv("IMG_4", "https://telegra.ph/file/be5f551acb116292d15ec.png")
+
+#MONGA DB URL
+BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", "False"))
+DATABASE_URL = environ.get('DATABASE_URL', "")
+DATABASE_URI = environ.get('DATABASE_URL', "")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Watermarks")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+
+
+
+#IMDB SETTINGS
+IMDB_TEMPLATE = getenv("IMDB_TEMPLATE", "<b>🎬 Title:</b> <a href={url}>{title}</a>\n<b>📺 Type:</b> {kind}\n<b>📆 Release:</b> <a href={url}/releaseinfo>{release_date}</a>\n<b>🌟 Rating:</b> <a href={url}/ratings>{rating} / 10</a>\n(based on <code>{votes}</code> user ratings.)\n\n<b>📀 Runtime:</b> <code>{runtime} minutes</code>\n<b>🎭 Genres:</b> {genres}\n\n<b>☀️ Languages:</b> {languages}\n<b>🎛 Countries:</b> {countries}\n<b>🎥 Director:</b> {director}\n<b>📝 Writers:</b> {writer}\n\n<b>© Powered by: <a href='https://t.me/+y53tWFUw6Q43NzE9'>{message.chat.title}</a></b>\n\n<b>✍️ Note:</b> <s>This message will be Auto-deleted after 5 minutes to avoid copyright issues.</s>")
+IMDB = getenv("IMDB", "True")
+LONG_IMDB_DESCRIPTION = getenv("LONG_IMDB_DESCRIPTION", "False")
+P_TTI_SHOW_OFF = getenv("P_TTI_SHOW_OFF", "True")
+SPELL_CHECK_REPLY = getenv("SPELL_CHECK_REPLY", "True")
+SINGLE_BUTTON = getenv("SINGLE_BUTTON", "True")
+MAX_LIST_ELM = os
