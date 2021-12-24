@@ -11,8 +11,8 @@ from program.database import db
 from config import ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, OWNER_NAME
 from utils import get_size, is_subscribed, temp
 import re
-from program.decorators import sudo_users_only
-from program.filters import command
+from driver.decorators import sudo_users_only
+from driver.filters import command
 from pyrogram import Client, filters
 from pyrogram import __version__ as pyrover
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
