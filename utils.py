@@ -10,7 +10,7 @@ import os
 from datetime import datetime
 from typing import List
 from pyrogram.types import InlineKeyboardButton
-from radio.database import db
+from program.database import db
 from bs4 import BeautifulSoup
 import requests
 
