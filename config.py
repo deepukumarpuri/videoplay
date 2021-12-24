@@ -38,7 +38,6 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "Watermarks")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 
-
 #IMDB SETTINGS
 IMDB_TEMPLATE = getenv("IMDB_TEMPLATE", "<b>🎬 Title:</b> <a href={url}>{title}</a>\n<b>📺 Type:</b> {kind}\n<b>📆 Release:</b> <a href={url}/releaseinfo>{release_date}</a>\n<b>🌟 Rating:</b> <a href={url}/ratings>{rating} / 10</a>\n(based on <code>{votes}</code> user ratings.)\n\n<b>📀 Runtime:</b> <code>{runtime} minutes</code>\n<b>🎭 Genres:</b> {genres}\n\n<b>☀️ Languages:</b> {languages}\n<b>🎛 Countries:</b> {countries}\n<b>🎥 Director:</b> {director}\n<b>📝 Writers:</b> {writer}\n\n<b>© Powered by: <a href='https://t.me/+y53tWFUw6Q43NzE9'>{message.chat.title}</a></b>\n\n<b>✍️ Note:</b> <s>This message will be Auto-deleted after 5 minutes to avoid copyright issues.</s>")
 IMDB = getenv("IMDB", "True")
@@ -46,7 +45,8 @@ LONG_IMDB_DESCRIPTION = getenv("LONG_IMDB_DESCRIPTION", "False")
 P_TTI_SHOW_OFF = getenv("P_TTI_SHOW_OFF", "True")
 SPELL_CHECK_REPLY = getenv("SPELL_CHECK_REPLY", "True")
 SINGLE_BUTTON = getenv("SINGLE_BUTTON", "True")
-MAX_LIST_ELM = os
+MAX_LIST_ELM = os.environ.get("MAX_LIST_ELM", None)
+
 OWNER_ID = int(os.environ.get("OWNER_ID"))
 ADMINS = int(os.environ.get("OWNER_ID"))
 # Bot settings
