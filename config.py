@@ -53,3 +53,5 @@ ADMINS = int(os.environ.get("OWNER_ID"))
 CACHE_TIME = os.environ.get("CACHE_TIME", 300)
 USE_CAPTION_FILTER = os.environ.get("USE_CAPTION_FILTER", False)
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
+
+AUTH_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
