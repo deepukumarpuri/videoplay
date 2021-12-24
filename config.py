@@ -54,5 +54,6 @@ ADMINS = int(os.environ.get("OWNER_ID"))
 CACHE_TIME = os.environ.get("CACHE_TIME", 300)
 USE_CAPTION_FILTER = os.environ.get("USE_CAPTION_FILTER", False)
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
+PICS = getenv("PICS", "https://telegra.ph/file/be5f551acb116292d15ec.png")
 
 AUTH_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
