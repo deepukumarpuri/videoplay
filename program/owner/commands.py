@@ -145,5 +145,3 @@ async def start(client, message):
             quote=True,
             parse_mode='html'
         )
-
-
