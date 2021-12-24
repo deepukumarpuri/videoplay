@@ -1,6 +1,4 @@
-import os
-from config import ALIVE_NAME, BOT_NAME, BOT_USERNAME, GROUP_SUPPORT, OWNER_NAME, ASSISTANT_USERNAME, ASSISTANT_NAME, UPDATES_CHANNEL, RADIO_BOT
-from radio import __version__
+
 
 class Script(object):
     START_TXT = """✨ Hello {},
