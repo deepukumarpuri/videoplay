@@ -1,9 +1,9 @@
 from pyrogram import Client, filters
 from utils import temp
 from pyrogram.types import Message
-from program.database import db
+from driver.database import db
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from config import SUPPORT_CHAT
+from info import SUPPORT_CHAT
 async def banned_users(_, client, message: Message):
     return (
         message.from_user is not None or not message.sender_chat
