@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 import datetime
 import time
-from program.database import db
+from driver.database import db
 from config import ADMINS
 from utils import broadcast_messages
 import asyncio
