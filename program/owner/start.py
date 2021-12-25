@@ -305,7 +305,8 @@ async def search(_, message: Message):
     usr_cmd = message.text.split("_")[-1]
     if usr_cmd == "/searched":
         chat_id = message.chat.id, message.chat.title
-        if not await db.get_chat(chat_id):
+        chat = message.chat.id
+        if not await db.get_chat(chat):
             await db.add_chat(chat_id)
             await Client.send_message(
         chat_id=LOG_CHANNEL,
