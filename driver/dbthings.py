@@ -17,7 +17,7 @@ async def handle_user_status(bot, cmd):
         await db.add_user(chat_id)
         await bot.send_message(
             LOG_CHANNEL,
-            f"**📢 News ** \n#New_Music_Lover **Started To Using Meh!** \n\nFirst Name: `{cmd.from_user.first_name}` \nUser ID: `{cmd.from_user.id}` \nProfile Link: [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id})"
+            f"**📢 News ** \n#New_Music_Lover **Started AND Using Me!** \n\nFirst Name: `{cmd.from_user.first_name}` \nUser ID: `{cmd.from_user.id}` \nProfile Link: [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id})"
         )
 
     ban_status = await db.get_ban_status(chat_id)
@@ -27,7 +27,7 @@ async def handle_user_status(bot, cmd):
         ).days > ban_status["ban_duration"]:
             await db.remove_ban(chat_id)
         else:
-            await cmd.reply_text("Sorry To Say! but **You are banned** 😂! Ask in **@Nexa_bots** if you think this was an mistake.", quote=True)
+            await cmd.reply_text("Sorry To Say That ! But **You Are Banned** 😂!\n Ask in **@DK_BOTZ** if You Think This Was An Mistake.", quote=True)
             return
     await cmd.continue_propagation()
     
