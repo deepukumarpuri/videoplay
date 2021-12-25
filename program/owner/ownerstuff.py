@@ -23,11 +23,11 @@ from driver.veez import user as pakaya
 from driver.database import db
 from driver.dbthings import main_broadcast_handler
 from driver.musicdwn import humanbytes, get_text
-from config import BOT_USERNAME, SUDO_USERS
+from config import BOT_USERNAME, OWNER_ID
 
 
 # Stats Of Your Bot
-@Client.on_message(filters.command("stat") & filters.user(SUDO_USERS))
+@Client.on_message(filters.command("status") & filters.user(OWNER_ID))
 async def botstats(_, message: Message):
     total, used, free = shutil.disk_usage(".")
     total = humanbytes(total)
@@ -45,7 +45,7 @@ async def botstats(_, message: Message):
 
 
 # Broadcast message to users (This will Broadcast using Bot with Db)
-@Client.on_message(filters.private & filters.command("cast") & filters.user(SUDO_USERS) & filters.reply)
+@Client.on_message(filters.private & filters.command("broadcast") & filters.user(OWNER_ID) & filters.reply)
 async def broadcast_handler_open(_, m: Message):
     await main_broadcast_handler(m, db)
 
@@ -76,7 +76,7 @@ async def chatcast(_, message: Message):
 
 
 # Ban User
-@Client.on_message(filters.private & filters.command("bans") & filters.user(SUDO_USERS))
+@Client.on_message(filters.private & filters.command("ban") & filters.user(OWNER_ID))
 async def ban(c: Client, m: Message):
     if len(m.command) == 1:
         await m.reply_text(
@@ -113,7 +113,7 @@ async def ban(c: Client, m: Message):
 
 
 # Unban User
-@Client.on_message(filters.private & filters.command("unbans") & filters.user(SUDO_USERS))
+@Client.on_message(filters.private & filters.command("unban") & filters.user(OWNER_ID))
 async def unban(c: Client, m: Message):
     if len(m.command) == 1:
         await m.reply_text(
@@ -148,7 +148,7 @@ async def unban(c: Client, m: Message):
 
 
 # Banned User List
-@Client.on_message(filters.private & filters.command("banslist") & filters.user(SUDO_USERS))
+@Client.on_message(filters.private & filters.command("banlist") & filters.user(OWNER_ID))
 async def _banned_usrs(_, m: Message):
     all_banned_users = await db.get_all_banned_users()
     banned_usr_count = 0
