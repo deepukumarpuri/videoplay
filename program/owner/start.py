@@ -301,7 +301,7 @@ async def new_chat(c: Client, m: Message):
             )
 
 
-@Client.on_message(filters.command("start"))
+@Client.on_message(filters.command("started"))
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
