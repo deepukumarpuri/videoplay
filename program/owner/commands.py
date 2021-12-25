@@ -91,51 +91,6 @@ async def start(client, message):
             InlineKeyboardButton('✗ Close the Menu ✗', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-            caption=Script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            quote=True,
-            parse_mode='html'
-        )
-        return
-    if AUTH_CHANNEL and not await is_subscribed(client, message):
-        try:
-            invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
-        except ChatAdminRequired:
-            logger.error("Make sure Bot is admin in Forcesub channel")
-            return
-        btn = [
-            [
-                InlineKeyboardButton(
-                    "Join Official Channel", url=invite_link.invite_link
-                )
-            ]
-        ]
-
-        if message.command[1] != "subscribe":
-            btn.append([InlineKeyboardButton(" 🔄 Try Again 👈 Tap me 🥰", callback_data=f"checksub#{message.command[1]}")])
-        await client.send_message(
-            chat_id=message.from_user.id,
-            text=Script.FORCESUB_TXT,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(btn),
-            parse_mode="markdown"
-            )
-        return
-    if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
-        buttons = [[
-            InlineKeyboardButton('❔ HOW TO USE THIS BOT', callback_data='cbguide')
-            ],[
-            InlineKeyboardButton('📚 Commands', callback_data='dkcmd'),
-            InlineKeyboardButton('🌐 Terms & Condition', callback_data='cdinfo')
-            ],[
-            InlineKeyboardButton('❤️ Donate', url=f'https://t.me/{OWNER_NAME}')
-            ],[
-            InlineKeyboardButton('📣 Official Channel', url='https://t.me/DKBOTZNETWORK'),
-            InlineKeyboardButton('✨ NEW Features', callback_data='cbfeature')
-            ],[
-            InlineKeyboardButton('✗ Close the Menu ✗', callback_data='close_data')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
             caption=Script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
