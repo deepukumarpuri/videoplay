@@ -26,8 +26,6 @@ from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message,InlineKeyboardMarkup, InlineKeyboardButton
 from youtubesearchpython import SearchVideos
 from youtube_search import YoutubeSearch
-from Python_ARQ import ARQ
-
 from config import BOT_USERNAME, UPDATES_CHANNEL
 from driver.merrors import capture_err
 from driver.modhelps import paste
