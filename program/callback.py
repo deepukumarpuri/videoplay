@@ -2,7 +2,7 @@
 
 from driver.queues import QUEUE
 from pyrogram import Client, filters
-from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Chat, Message
 from config import (
     ASSISTANT_NAME,
     BOT_NAME,
@@ -33,7 +33,7 @@ async def cbstart(_, query: CallbackQuery):
                 [InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse")],
                 [
                     InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
-                    InlineKeyboardButton("❤ Donate", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("❤️ Donate", url=f"https://t.me/{OWNER_NAME}"),
                 ],
                 [
                     InlineKeyboardButton(
@@ -45,7 +45,7 @@ async def cbstart(_, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        "🌐 Source Code", url="https://github.com/levina-lab/video-stream"
+                        "🌐 Owner Command 🌐", callback_data="cbowner"
                     )
                 ],
             ]
@@ -106,6 +106,7 @@ async def cbbasic(_, query: CallbackQuery):
         f"""🏮 here is the basic commands:
 
 » /mplay (song name/link) - play music on video chat
+» /stream (query/link) - stream the yt live/radio live music
 » /vplay (video name/link) - play video on video chat
 » /vstream - play live video from yt live/m3u8
 » /playlist - show you the playlist
@@ -199,4 +200,9 @@ async def close(_, query: CallbackQuery):
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
         return await query.answer("💡 only admin with manage voice chats permission that can tap this button !", show_alert=True)
+    await query.message.delete()
+
+
+@Client.on_callback_query(filters.regex("close"))
+async def close(_, query: CallbackQuery):
     await query.message.delete()
