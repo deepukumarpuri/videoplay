@@ -305,8 +305,8 @@ async def new_chat(c: Client, m: Message):
 async def started(_, message: Message):
     usr_cmd = message.text.split("_")[-1]
     if usr_cmd == "/started":
-        chat_id = message.chat.id
-            await db.add_chat(message.chat.id, message.chat.title)
+        chat_id = message.chat.id, message.chat.title
+            await db.add_chat(chat_id)
             await Client.send_message(
         chat_id=LOG_CHANNEL,
         text=f"**📢 News ** \n#New_Music_Lover **Started To Using Meh!** \n\nFirst Name: `{message.chat.title}` \nUser ID: `{message.chat.id}` ",
