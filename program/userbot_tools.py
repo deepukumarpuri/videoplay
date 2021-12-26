@@ -15,7 +15,7 @@ from driver.decorators import authorized_users_only, sudo_users_only
 @authorized_users_only
 async def join_chat(c: Client, m: Message):
     usr_cmd = message.text.split("_")[-1]
-    if usr_cmd == "/start":
+    if usr_cmd == "/userbotjoin":
         chat_id = message.chat.id
         if not await db.is_user_exist(chat_id):
             await db.add_user(chat_id)
