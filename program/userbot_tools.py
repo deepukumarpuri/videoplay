@@ -3,7 +3,7 @@ from driver.veez import user
 from pyrogram.types import Message
 from driver.database import db, Database
 from pyrogram import Client, filters
-from config import BOT_USERNAME, SUDO_USERS
+from config import BOT_USERNAME, SUDO_USERS, LOG_CHANNEL
 from driver.filters import command, other_filters
 from pyrogram.errors import UserAlreadyParticipant
 from driver.decorators import authorized_users_only, sudo_users_only
