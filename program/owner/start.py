@@ -89,7 +89,7 @@ async def start(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "🌐 Owner Command 🌐", callback_data="cbowner"
+                        "👨‍💻 Owner Command", callback_data="cbowner"
                     )
                 ],
             ]
@@ -137,7 +137,7 @@ async def help(_, message: Message):
                         "🧙🏻 Sudo Command", callback_data="cbsudo"
                     ),
                     InlineKeyboardButton(
-                        "🧙🏻 Owner Command", callback_data="cbowner"
+                        "👨‍💻 Owner Command", callback_data="cbowner"
                     )
                 ],
                 [
