@@ -14,16 +14,6 @@ from driver.decorators import authorized_users_only, sudo_users_only
 )
 @authorized_users_only
 async def join_chat(c: Client, m: Message):
-    usr_cmd = message.text.split("_")[-1]
-    if usr_cmd == "/userbotjoin":
-        chat_id = message.chat.id
-        if not await db.is_user_exist(chat_id):
-            await db.add_user(chat_id)
-            await Client.send_message(
-        chat_id=LOG_CHANNEL,
-        text=f"**📢 News ** \n#New_Music_Lover **Started To Using Meh!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
-        parse_mode="markdown"
-    )
     chat_id = m.chat.id
     try:
         invite_link = await m.chat.export_invite_link()
