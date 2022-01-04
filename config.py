@@ -37,6 +37,7 @@ DATABASE_URL = environ.get('DATABASE_URL', "")
 DATABASE_URI = environ.get('DATABASE_URL', "")
 DATABASE_NAME = environ.get('DATABASE_NAME', "Watermarks")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<code>{file_name}</code>\n\n<b>Size:</b> {file_size}\n\n{file_caption}\n\n<b>[© TVSeries & Movie Studio](https://t.me/joinchat/prE6ALN6x2hkY2E1)</b>")
 
 
 #IMDB SETTINGS
