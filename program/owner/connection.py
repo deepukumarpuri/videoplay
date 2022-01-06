@@ -54,7 +54,7 @@ async def addconnection(client,message):
             addcon = await add_connection(str(group_id), str(userid))
             if addcon:
                 await message.reply_text(
-                    f"Sucessfully connected to **{title}**\nNow manage your group from my pm !",
+                    f"Sucessfully connected to **{title}**\nNow manage your group from my pm !\n Send /connections to Manage Group",
                     quote=True,
                     parse_mode="md"
                 )
