@@ -13,23 +13,23 @@ from utils import get_size, is_subscribed, temp
 import re
 logger = logging.getLogger(__name__)
 
-@Client.on_message(filters.command("startedd"))
+@Client.on_message(filters.command("starte"))
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('Movie & Series Studio Chat', url='https://t.me/joinchat/TmzDkDEYo65iMmM1')
+                InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse")
             ],
             [
-                InlineKeyboardButton('Series', url='https://t.me/joinchat/c7IfwgC6AtdiOGM1'),
-                InlineKeyboardButton('Movies', url='https://t.me/joinchat/zqPG0JH27t9jMzI1')
+                InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
+                InlineKeyboardButton('❤️ Donate', url='https://t.me/DKBOTZHELP')
             ],
             [
                 InlineKeyboardButton('⌦ Close the Menu ⌫', callback_data="close_data"),
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
+        await message.reply(script.GROUP_START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
@@ -41,17 +41,17 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('Add me to your Chat', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton("➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true)
             ],[
-            InlineKeyboardButton('Series', url='https://t.me/joinchat/c7IfwgC6AtdiOGM1'),
-            InlineKeyboardButton('Movies', url='https://t.me/joinchat/zqPG0JH27t9jMzI1')
+            InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse"),
+            InlineKeyboardButton("📚 Commands", callback_data="cbcmds")
             ],[
-            InlineKeyboardButton('search here movie', switch_inline_query_current_chat='')
+            InlineKeyboardButton('❤️ Donate', url='https://t.me/DKBOTZHELP')
             ],[
-            InlineKeyboardButton('movie & series studio chat', url='https://t.me/joinchat/TmzDkDEYo65iMmM1')
+            InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
             ],[
-            InlineKeyboardButton('help', callback_data='help'),
-            InlineKeyboardButton('about', callback_data='about')
+            InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
+            InlineKeyboardButton("📹 Tutorial Video", url=f"https://t.me/{UPDATES_CHANNEL}")
             ],[
             InlineKeyboardButton('⌦ Close the Menu ⌫', callback_data='close_data')
         ]]
