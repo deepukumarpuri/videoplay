@@ -201,3 +201,7 @@ async def close(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("close"))
 async def close(_, query: CallbackQuery):
     await query.message.delete()
+    
+@Client.on_callback_query(filters.regex("close_data"))
+async def close(_, query: CallbackQuery):
+    await query.message.delete()
