@@ -18,7 +18,7 @@ import time
 import ytthumb
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from config import BOT_USERNAME
+from config import *
 from driver.filters import command, other_filters
 
 
@@ -42,13 +42,13 @@ async def send_thumbnail(bot, update):
         )
         await update.reply_photo(
             photo=thumbnail,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('join projects channel', url='https://telegram.me/DKBOTZ')]]),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('Join Update Channel', url='https://telegram.me/DKBOTZ')]]),
             quote=True
         )
         await message.delete()
     except Exception as error:
         await message.edit_text(
-            text="**Please Use** /ytthumb (youtube link)\n\n**Example:** `/ytthumb https://youtu.be/h6PtzFYaMxQ`",
+            text="**Please Use** /ytthumb (youtube link)\n\n**Example:** `/ytthumb {EN_VIDEO_LINK}`",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('join projects channel', url='https://telegram.me/DKBOTZ')]])
         )
