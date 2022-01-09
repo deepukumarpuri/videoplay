@@ -1,11 +1,11 @@
 class Script(object):
     START_TXT = """✨ Welcome {},
 
-💭 <a href=https://t.me/VC_VIDEO_PLAY_BOT>VC VIDEO PLAY BOT</a>! **Allows you to play music and video on groups through the new Telegram's video chats!**
+💭 <a href=https://t.me/VC_VIDEO_PLAY_BOT>VC VIDEO PLAY BOT</a>! **Allows You To Play Music And Video On Groups Through The New Telegram's Video Chats!**
 
-**💡 Find out all the Bot's commands and how they work by clicking on the » 📚 Commands button!**
+**💡 Find Out All The Bot's Commands And How They Work By Clicking On The » 📚 Commands Button!**
 
-**🔖 To know how to use this bot, please click on the » ❓ Basic Guide button!**\n\n You Can Also Watch This Tutorial Video\n In English Voice :- \n In Hindi Voice :- """
+**🔖 To Know How to Use This Bot, Please Click On The » ❓ Basic Guide button!**\n\n You Can Also Watch This Tutorial Video\n In English Voice :- \n In Hindi Voice :- """
 
     GROUP_START_TXT = """Hello {},
 
@@ -23,13 +23,17 @@ This Command For Group Add Me To Your With Click Below Button
 
 🔆 If You Don't Know How To Use Me Watch This Video 🔆\nIn English Voice :- \n In Hindi Voice :-  """
 
-    G_VC_TXT = """Hello {},
+    G_VC_TXT = """ Hi {} 😉️! 
 
-My name is <a href=https://t.me/{}>{}</a>!
 
-<b>I can provide Movies. A Telegram Auto Filter Bot. Its Easy To Use Me :)
+             😌️  **Voice Chat Link** 😌️
+____________________------------______________________
 
-Just Add me to Your Group As Admin, Hit The Help Button For More Info..</b>"""
+👉️ [Here Is Your Voice Chat Link](https://t.me/{}?voicechat) 👈️
+____________________------------______________________
+
+
+Enjoy 😌️❤️!"""
 
 
 
