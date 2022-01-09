@@ -36,4 +36,4 @@ async def playlist(client, m: Message):
             QUE = QUE + "\n" + f"**#{x}** - [{han}]({hok}) | `{hap}`"
          await m.reply(QUE, reply_markup=keyboard, disable_web_page_preview=True)
    else:
-      await m.reply("❌ **nothing is currently streaming.**")
+      await m.reply("❌ **Nothing is Currently Streaming.**")

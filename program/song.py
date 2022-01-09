@@ -148,7 +148,7 @@ def time_to_seconds(times):
 async def lyrics(_, message):
     try:
         if len(message.command) < 2:
-            await message.reply_text("» **give a lyric name too.**")
+            await message.reply_text("» **Give A Lyrics Name Too.**")
             return
         query = message.text.split(None, 1)[1]
         rep = await message.reply_text("🔎 **searching lyrics...**")
@@ -158,4 +158,4 @@ async def lyrics(_, message):
         result = f"{resp['data']}"
         await rep.edit(result)
     except Exception:
-        await rep.edit("❌ **lyrics not found.**\n\n» **please give a valid song name.**")
+        await rep.edit("❌ **Lyrics Not Found.**\n\n» **Please Give A Valid Song Name.**")

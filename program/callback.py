@@ -1,6 +1,6 @@
-# Copyright (C) 2021 By VeezMusicProject
+# Copyright (C) 2021 By @DKBOTZ And Some Creadit To VEEZMUSIC
 
-
+from script import Script as script
 from driver.queues import QUEUE
 from pyrogram import Client, filters
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Chat, Message
@@ -8,15 +8,15 @@ from config import *
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 
 
-@Client.on_callback_query(filters.regex("cbstart"))
+@Client.on_callback_query(filters.regex("cbstarts"))
 async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""✨ **Welcome [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**\n
-💭 **[{BOT_NAME}](https://t.me/{BOT_USERNAME}) allows you to play music and video on groups through the new Telegram's video chats!**
+💭 **[{BOT_NAME}](https://t.me/{BOT_USERNAME}) Allows You To Play Music And Video On Groups Through The New Telegram's Video Chats!**
 
-💡 **Find out all the Bot's commands and how they work by clicking on the » 📚 Commands button!**
+**💡 Find Out All The Bot's Commands And How They Work By Clicking On The » 📚 Commands Button!**
 
-🔖 **To know how to use this bot, please click on the » ❓ Basic Guide button!**""",
+**🔖 To Know How to Use This Bot, Please Click On The » ❓ Basic Guide button!**\n\n You Can Also Watch This Tutorial Video\n In English Voice :- {EN_VIDEO_LINK} \n In Hindi Voice :- {VIDEO_LINK}""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -40,12 +40,12 @@ async def cbstart(_, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        "👨‍💻 Owner Command", callback_data="cbowner"
+                        "⌦ Close the Menu ⌫", callback_data="close_data"
                     )
                 ],
             ]
         ),
-        disable_web_page_preview=True,
+        disable_web_page_preview=False,
     )
 
 
@@ -114,6 +114,10 @@ async def cbbasic(_, query: CallbackQuery):
 » /uptime - show the bot uptime status
 » /alive - show the bot alive info (in group)
 
+» /ytthumb (Youtube Link) - Download Youtube Thumbnail Ex :- /ytthumb {EN_VIDEO_LINK}
+» /vc - Get Your Group VC Link (in group)
+» /tts - Reply The Text To Bot Convert in Voice ( Support All Language)
+
 ⚡️ __Powered by {BOT_NAME} AI__""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
@@ -165,14 +169,14 @@ async def cbsudo(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbmenu"))
 async def cbmenu(_, query: CallbackQuery):
     if query.message.sender_chat:
-        return await query.answer("you're an Anonymous Admin !\n\n» revert back to user account from admin rights.")
+        return await query.answer("You're An Anonymous Admin !\n\n» Revert Back to user account from admin rights.")
     a = await _.get_chat_member(query.message.chat.id, query.from_user.id)
     if not a.can_manage_voice_chats:
         return await query.answer("💡 only admin with manage voice chats permission that can tap this button !", show_alert=True)
     chat_id = query.message.chat.id
     if chat_id in QUEUE:
           await query.edit_message_text(
-              f"⚙️ **settings of** {query.message.chat.title}\n\n⏸ : pause stream\n▶️ : resume stream\n🔇 : mute userbot\n🔊 : unmute userbot\n⏹ : stop stream",
+              f"⚙️ **Settings Of** {query.message.chat.title}\n\n⏸ : Pause Stream\n▶️ : Resume Stream\n🔇 : Mute Userbot\n🔊 : Unmute Userbot\n⏹ : Stop Stream",
               reply_markup=InlineKeyboardMarkup(
                   [[
                       InlineKeyboardButton("⏹", callback_data="cbstop"),
@@ -189,6 +193,44 @@ async def cbmenu(_, query: CallbackQuery):
     else:
         await query.answer("❌ nothing is currently streaming", show_alert=True)
 
+@Client.on_callback_query(filters.regex("cbowner"))
+async def cbbasic(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""❄️ Here is The Owner Commands ❄️
+
+» /uptime - Check Bot Up Times
+» /status - Check Bot Stats
+» /ban_user (user id) - Ban The User
+» /unban_user (user id)  - Unban The User
+» /banned - Check Banned User
+
+More Feature Coming Soon
+
+⚡️ __Powered by {BOT_NAME} AI__""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
+        ),
+    )
+
+@Client.on_callback_query(filters.regex("dkvideo"))
+async def cbbasic(_, query: CallbackQuery):
+    await query.edit_message_text(
+        f"""🛡 **Here is All Tutorial Video Of This Bot** 🛡
+
+📮 How To Play Video in VC Part 1 - 
+
+✨ In This Video I Tell You How To Add Bot And Userbot in Group\n.How To ⏸ Pause, ▶️ Resume, 🔇 Mute, 🔊 Unmute, ⏹ Stop, ⏩ Skip And How To Control Song/Video Volume ✨
+
+⚡️ Tutorial Video Link :- IN HINDI :- {VIDEO_LINK} IN ENGLISH :- {EN_VIDEO_LINK}
+
+❤️ Like This 🎦 Video And Subscrbie My Channel
+
+⚡️ __Powered by {BOT_NAME} AI__""",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
+        ),
+    )
+
 
 @Client.on_callback_query(filters.regex("cls"))
 async def close(_, query: CallbackQuery):
@@ -203,5 +245,32 @@ async def close(_, query: CallbackQuery):
     await query.message.delete()
     
 @Client.on_callback_query(filters.regex("close_data"))
-async def close(_, query: CallbackQuery):
+async def closedata(_, query: CallbackQuery):
     await query.message.delete()
+
+
+@Client.on_callback_query(filters.regex("cbstart"))
+async def started(_, query: CallbackQuery):
+        buttons = [[
+            InlineKeyboardButton("➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+            ],[
+            InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse"),
+            InlineKeyboardButton("📚 Commands", callback_data="cbcmds")
+            ],[
+            InlineKeyboardButton('❤️ Donate', url='https://t.me/DKBOTZHELP')
+            ],[
+            InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
+            ],[
+            InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
+            InlineKeyboardButton("📹 Tutorial Video", url=f"VIDEO_LINK")
+            ],[
+            InlineKeyboardButton('⌦ Close the Menu ⌫', callback_data='close_data')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_text(
+            text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            disable_web_page_preview=False,
+            reply_markup=reply_markup,
+            quote=True,
+            parse_mode='html'
+        )
