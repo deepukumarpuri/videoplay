@@ -8,7 +8,7 @@ from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
 from driver.database import db, Database
-from config import ADMINS, LOG_CHANNEL, PICS, VIDEO_LINK
+from config import *
 from utils import get_size, is_subscribed, temp
 import re
 logger = logging.getLogger(__name__)
