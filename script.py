@@ -1,11 +1,12 @@
 class Script(object):
     START_TXT = """ ✨ Welcome {}, 
 
-💭 <a href=https://t.me/VC_VIDEO_PLAY_BOT>VC VIDEO PLAY BOT</a>! \n**Allows You To Play Music And Video On Groups Through The New Telegram's Video Chats!**
+💭 <a href=https://t.me/VC_VIDEO_PLAY_BOT>VC VIDEO PLAY BOT</a>! \nAllows You To Play Music And Video On Groups Through The New Telegram's Video Chats!
 
-**💡 Find Out All The Bot's Commands And How They Work By Clicking On The » 📚 Commands Button!**
+*
+💡 Find Out All The Bot's Commands And How They Work By Clicking On The » 📚 Commands Button!
 
-**🔖 To Know How to Use This Bot, Please Click On The » ❓ Basic Guide button!**\n\n You Can Also Watch This Tutorial Video\n In English Voice :- \n In Hindi Voice :- **"""
+🔖 To Know How to Use This Bot, Please Click On The » ❓ Basic Guide button!\n\n You Can Also Watch This Tutorial Video\n In English Voice :- \n In Hindi Voice :- """
 
     GROUP_START_TXT = """ Hello {}, 
 
@@ -17,7 +18,7 @@ I Am Most Powerful VC VIDEO PLAY BOT Use Me To Play Song/Video in VC
 
     VC_TXT = """Hello {},
 
-My name is <a href=https://t.me/gghjjj>nnn</a>!
+My name is <a href=https://t.me/VC_VIDEO_PLAY_BOT>VC VIDEO PLAY BOT</a>!
 
 This Command For Group Add Me To Your With Click Below Button
 
@@ -26,7 +27,7 @@ This Command For Group Add Me To Your With Click Below Button
     G_VC_TXT = """ Hi {} 😉️! 
 
 
-             😌️  **Voice Chat Link** 😌️
+             😌️  Voice Chat Link 😌️
 ____________________------------______________________
 
 👉️ [Here Is Your Voice Chat Link](https://t.me/{}?voicechat) 👈️
