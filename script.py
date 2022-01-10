@@ -1,11 +1,11 @@
 class Script(object):
     START_TXT = """ ✨ Welcome {}, 
 
-💭 <a href=https://t.me/VC_VIDEO_PLAY_BOT>VC VIDEO PLAY BOT</a>! **Allows You To Play Music And Video On Groups Through The New Telegram's Video Chats!**
+💭 <a href=https://t.me/VC_VIDEO_PLAY_BOT>VC VIDEO PLAY BOT</a>! \n**Allows You To Play Music And Video On Groups Through The New Telegram's Video Chats!**
 
 **💡 Find Out All The Bot's Commands And How They Work By Clicking On The » 📚 Commands Button!**
 
-**🔖 To Know How to Use This Bot, Please Click On The » ❓ Basic Guide button!**\n\n You Can Also Watch This Tutorial Video\n In English Voice :- \n In Hindi Voice :- """
+**🔖 To Know How to Use This Bot, Please Click On The » ❓ Basic Guide button!**\n\n You Can Also Watch This Tutorial Video\n In English Voice :- \n In Hindi Voice :- **"""
 
     GROUP_START_TXT = """ Hello {}, 
 
