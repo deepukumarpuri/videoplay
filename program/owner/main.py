@@ -13,7 +13,7 @@ from utils import get_size, is_subscribed, temp
 import re
 logger = logging.getLogger(__name__)
 
-@Client.on_message(filters.command("starte"))
+@Client.on_message(filters.command("start"))
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
@@ -64,7 +64,7 @@ async def start(client, message):
             parse_mode='html'
         )
 
-@Client.on_message(filters.command("vcs"))
+@Client.on_message(filters.command("vc"))
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
@@ -95,7 +95,7 @@ async def start(client, message):
             InlineKeyboardButton("➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
             ],[
             InlineKeyboardButton("📹 All Tutorial Video", callback_data="dkvideo"),
-            InlineKeyboardButton("📚 Commands", callback_data="started")
+            InlineKeyboardButton("📚 Commands", callback_data="cbcmds")
             ],[
             InlineKeyboardButton('❤️ Donate', url='https://t.me/DKBOTZHELP')
             ],[

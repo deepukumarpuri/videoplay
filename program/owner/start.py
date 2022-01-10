@@ -47,55 +47,7 @@ async def _(bot: Client, cmd: Message):
     await handle_user_status(bot, cmd)
 
 
-@Client.on_message(command(["start", f"start@{BOT_USERNAME}"]))
-async def start(_, message: Message):
-    usr_cmd = message.text.split("_")[-1]
-    if usr_cmd == "/start":
-        chat_id = message.chat.id
-        if not await db.is_user_exist(chat_id):
-            await db.add_user(chat_id)
-            await Client.send_message(
-        chat_id=LOG_CHANNEL,
-        text=f"**📢 News ** \n#New_Music_Lover **Started To Using Meh!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
-        parse_mode="markdown"
-    )
-    await message.reply_text(
-        f"""✨ **Welcome {message.from_user.mention()} !**\n
-💭 [{BOT_NAME}](https://t.me/{BOT_USERNAME}) **Allows you to play music and video on groups through the new Telegram's video chats!**
 
-💡 **Find out all the Bot's commands and how they work by clicking on the » 📚 Commands button!**
-
-🔖 **To know how to use this bot, please click on the » ❓ Basic Guide button!""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "➕ Add me to your Group ➕",
-                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-                    )
-                ],
-                [InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse")],
-                [
-                    InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
-                    InlineKeyboardButton("❤️ Donate", url=f"https://t.me/{OWNER_NAME}"),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
-                    ),
-                    InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    ),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "👨‍💻 Owner Command", callback_data="cbowner"
-                    )
-                ],
-            ]
-        ),
-        disable_web_page_preview=True,
-    )
 
 
 
@@ -155,49 +107,7 @@ async def help(_, message: Message):
 
 
 
-@Client.on_message(command(["vc", f"vc@{BOT_USERNAME}"]) & other_filters)
-async def vc(_, message: Message):
-    usr_cmd = message.text.split("_")[-1]
-    if usr_cmd == "/vc":
-        chat_id = message.chat.id
-        if not await db.is_user_exist(chat_id):
-            await db.add_user(chat_id)
-            await Client.send_message(
-        chat_id=LOG_CHANNEL,
-        text=f"**📢 News ** \n#New_Music_Lover **Started AND Using Me!** \n\nFirst Name: `{message.from_user.first_name}` \nUser ID: `{message.from_user.id}` \nProfile Link: [{message.from_user.first_name}](tg://user?id={message.from_user.id})",
-        parse_mode="markdown"
-    )
-    VC_LINK = f"https://t.me/{message.chat.username}?voicechat"
-    await message.reply_text(
-        f"""<b>Hi {message.from_user.first_name} 😉️!</b>
 
-
-             😌️  **Voice Chat Link** 😌️
-____________________------------______________________
-
-👉️ [Here Is Your Voice Chat Link](https://t.me/{message.chat.username}?voicechat) 👈️
-____________________------------______________________
-
-Enjoy 😌️❤️!""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "↗️ Share Voice Chat Invitation ↗️", url=f"https://t.me/share/url?url=**Join%20Our%20Group%20Voice%20Chat%20😉%20%20{VC_LINK}%20❤️**"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "🔰️ Update Channel 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    ),
-                    InlineKeyboardButton(
-                        "⚜️ Support Group ⚜️", url="https://t.me/DK_BOTZ"
-                    )
-                ]
-            ]
-        ),
-        disable_web_page_preview=True
-    )
 
     
 @Client.on_message(command(["search", f"search@{BOT_USERNAME}"]))
