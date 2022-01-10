@@ -8,7 +8,7 @@ from config import *
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 
 
-@Client.on_callback_query(filters.regex("cbstarts"))
+@Client.on_callback_query(filters.regex("cbstartsbyveez"))
 async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""✨ **Welcome [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !**\n
@@ -217,9 +217,9 @@ async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""🛡 **Here is All Tutorial Video Of This Bot** 🛡
 
-📮 How To Play Video in VC Part 1 - 
+📮 How To Play Video in VC Part 1 - {VIDEO_LINK}
 
-✨ In This Video I Tell You How To Add Bot And Userbot in Group\n.How To ⏸ Pause, ▶️ Resume, 🔇 Mute, 🔊 Unmute, ⏹ Stop, ⏩ Skip And How To Control Song/Video Volume ✨
+🎦 Video Details :- ✨ In This Video I Tell You How To Add Bot And Userbot in Group\n.How To ⏸ Pause, ▶️ Resume, 🔇 Mute, 🔊 Unmute, ⏹ Stop, ⏩ Skip And How To Control Song/Video Volume ✨
 
 ⚡️ Tutorial Video Link :- IN HINDI :- {VIDEO_LINK} IN ENGLISH :- {EN_VIDEO_LINK}
 
@@ -267,10 +267,9 @@ async def started(_, query: CallbackQuery):
             InlineKeyboardButton('⌦ Close the Menu ⌫', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_text(
-            text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+        await query.message.edit_text(
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             disable_web_page_preview=False,
             reply_markup=reply_markup,
-            quote=True,
             parse_mode='html'
         )
