@@ -57,7 +57,7 @@ async def start(client, message):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
-            text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            text=script.START_TXT.format(message.from_user.mention),
             disable_web_page_preview=False,
             reply_markup=reply_markup,
             quote=True,
