@@ -18,10 +18,10 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton("📹 Tutorial Video", url=f"{VIDEO_LINK}")
+                InlineKeyboardButton("➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
             ],
             [
-                InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
+                InlineKeyboardButton("📹 Tutorial Video", callback_data="dkvideo"),
                 InlineKeyboardButton('❤️ Donate', url='https://t.me/DKBOTZHELP')
             ],
             [
@@ -29,7 +29,7 @@ async def start(client, message):
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply(script.GROUP_START_TXT.format(message.from_user.mention if message.from_user else message.chat.title), reply_markup=reply_markup)
+        await message.reply(script.G_VC_TXT.format(message.from_user.mention if message.from_user else message.chat.title, message.chat.username), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
@@ -43,7 +43,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton("➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
             ],[
-            InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse"),
+            InlineKeyboardButton("📹 All Tutorial Video", callback_data="dkvideo"),
             InlineKeyboardButton("📚 Commands", callback_data="cbcmds")
             ],[
             InlineKeyboardButton('❤️ Donate', url='https://t.me/DKBOTZHELP')
@@ -51,18 +51,19 @@ async def start(client, message):
             InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
             ],[
             InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
-            InlineKeyboardButton("📹 Tutorial Video", url=f"https:/{VIDEO_LINK}")
+            InlineKeyboardButton("📹 Tutorial Video", url=f"{VIDEO_LINK}")
             ],[
             InlineKeyboardButton('⌦ Close the Menu ⌫', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
-            text=script.START_TXT.format(message.from_user.mention),
-            disable_web_page_preview=False,
+            text=script.VC_TXT.format(message.from_user.mention),
+            disable_web_page_preview=True,
             reply_markup=reply_markup,
             quote=True,
             parse_mode='html'
         )
+
 
 @Client.on_message(filters.command("vc"))
 async def start(client, message):
