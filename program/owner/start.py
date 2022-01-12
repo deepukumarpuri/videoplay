@@ -6,7 +6,6 @@ from driver.database import db, Database
 from config import *
 from utils import get_size, is_subscribed, temp
 import re
-logger = logging.getLogger(__name__)
 
 from sys import version_info
 from time import time
@@ -55,8 +54,6 @@ async def _(bot: Client, cmd: Message):
     await handle_user_status(bot, cmd)
 
 
-
-logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start"))
 async def start(client, message):
