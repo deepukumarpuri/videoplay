@@ -88,7 +88,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton("➕ Add me to your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
             ],[
-            InlineKeyboardButton("📹 All Tutorial Video", callback_data="dkvideo"),
+            InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse"),
             InlineKeyboardButton("📚 Commands", callback_data="cbcmds")
             ],[
             InlineKeyboardButton('❤️ Donate', url='https://t.me/DKBOTZHELP')
@@ -96,7 +96,7 @@ async def start(client, message):
             InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
             ],[
             InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
-            InlineKeyboardButton("📹 Tutorial Video", url=f"{VIDEO_LINK}")
+            InlineKeyboardButton("📹 Tutorial Video", url=f"VIDEO_LINK")
             ],[
             InlineKeyboardButton('⌦ Close the Menu ⌫', callback_data='close_data')
         ]]
