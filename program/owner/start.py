@@ -1,4 +1,7 @@
 import os
+import logging
+import random
+import asyncio
 from datetime import datetime
 from script import Script as script
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
