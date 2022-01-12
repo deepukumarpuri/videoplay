@@ -113,39 +113,20 @@ async def start(client, message):
 @Client.on_message(filters.command("helps"))
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
-        buttons = [
-                [
-                    InlineKeyboardButton(
-                        "🤔 How To Use Me 🤔", callback_data="cbhowtouse"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "👷🏻 Admin Command", callback_data="cbadmin"
-                    ),
-                    InlineKeyboardButton(
-                        "📚 Basic Command", callback_data="cbbasic"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "🧙🏻 Sudo Command", callback_data="cbsudo"
-                    ),
-                    InlineKeyboardButton(
-                        "👨‍💻 Owner Command", callback_data="cbowner"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
-                    ),
-                    InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    )
-                ]
-            ]
-        )
-    )
+        buttons = [[
+            InlineKeyboardButton("🤔 How To Use Me 🤔", callback_data="cbhowtouse")
+            ],[
+            InlineKeyboardButton("👷🏻 Admin Command", callback_data="cbadmin"),
+            InlineKeyboardButton("📚 Basic Command", callback_data="cbbasic")
+            ],[
+            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="cbsudo"),
+            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="cbowner")
+            ],[
+            InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
+            InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
+            ],[
+            InlineKeyboardButton('⌦ Close the Menu ⌫', callback_data='close_data')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.GROUP_START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, message.chat.username), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
@@ -158,39 +139,20 @@ async def start(client, message):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
-        buttons = [
-                [
-                    InlineKeyboardButton(
-                        "🤔 How To Use Me 🤔", callback_data="cbhowtouse"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "👷🏻 Admin Command", callback_data="cbadmin"
-                    ),
-                    InlineKeyboardButton(
-                        "📚 Basic Command", callback_data="cbbasic"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "🧙🏻 Sudo Command", callback_data="cbsudo"
-                    ),
-                    InlineKeyboardButton(
-                        "👨‍💻 Owner Command", callback_data="cbowner"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
-                    ),
-                    InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    )
-                ]
-            ]
-        )
-    )
+        buttons = [[
+            InlineKeyboardButton("🤔 How To Use Me 🤔", callback_data="cbhowtouse")
+            ],[
+            InlineKeyboardButton("👷🏻 Admin Command", callback_data="cbadmin"),
+            InlineKeyboardButton("📚 Basic Command", callback_data="cbbasic")
+            ],[
+            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="cbsudo"),
+            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="cbowner")
+            ],[
+            InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
+            InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
+            ],[
+            InlineKeyboardButton('⌦ Close the Menu ⌫', callback_data='close_data')
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
             text=script.START_TXT.format(message.from_user.mention),
