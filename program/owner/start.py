@@ -9,7 +9,7 @@ from driver.database import db, Database
 from config import *
 from utils import get_size, is_subscribed, temp
 import re
-
+logger = logging.getLogger(__name__)
 from sys import version_info
 from time import time
 from pyrogram import Client, filters # Ik this is weird as this shit is already imported in line 6! anyway ... Fuck Off!
@@ -74,7 +74,7 @@ async def start(client, message):
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply(script.G_VC_TXT.format(message.from_user.mention if message.from_user else message.chat.title, message.chat.username), reply_markup=reply_markup)
+        await message.reply(script.GROUP_START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, message.chat.username), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
@@ -102,7 +102,7 @@ async def start(client, message):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
-            text=script.VC_TXT.format(message.from_user.mention),
+            text=script.START_TXT.format(message.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             quote=True,
