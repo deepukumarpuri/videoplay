@@ -262,7 +262,7 @@ async def started(_, query: CallbackQuery):
             InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
             ],[
             InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
-            InlineKeyboardButton("📹 Tutorial Video", url=f"VIDEO_LINK")
+            InlineKeyboardButton("📹 Tutorial Video", url=f"{VIDEO_LINK}")
             ],[
             InlineKeyboardButton('⌦ Close the Menu ⌫', callback_data='close_data')
         ]]
