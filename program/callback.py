@@ -268,7 +268,7 @@ async def started(_, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            text=script.START_TXT.format(query.from_user.mention),
             disable_web_page_preview=False,
             reply_markup=reply_markup,
             parse_mode='html'
