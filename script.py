@@ -38,7 +38,7 @@ Enjoy 😌️❤️!"""
 
 HELP_TXT = """ ✨ Hi {}, 
 
-**Here is the Help Menu For This Bot 😊!**
+Here is the Help Menu For This Bot 😊!
 
 """
 
