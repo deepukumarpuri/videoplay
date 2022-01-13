@@ -115,7 +115,7 @@ async def cbbasic(_, query: CallbackQuery):
 » /alive - show the bot alive info (in group)
 
 » /ytthumb (Youtube Link) - Download Youtube Thumbnail Ex :- /ytthumb {EN_VIDEO_LINK}
-» /vc - Get Your Group VC Link (in group)
+» /vc - Get Your Group VC Link (Only For Public group)
 » /tts - Reply The Text To Bot Convert in Voice ( Support All Language)
 
 ⚡️ __Powered by {BOT_NAME} AI__""",
