@@ -28,13 +28,13 @@ from config import *
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [[
-            InlineKeyboardButton("🤔 How To Use Me 🤔", callback_data="cbhowtouse")
+            InlineKeyboardButton("🤔 How To Use Me 🤔", callback_data="cbhowtouses")
             ],[
-            InlineKeyboardButton("👷🏻 Admin Command", callback_data="cbadmin"),
-            InlineKeyboardButton("📚 Basic Command", callback_data="cbbasic")
+            InlineKeyboardButton("👷🏻 Admin Command", callback_data="cbadmins"),
+            InlineKeyboardButton("📚 Basic Command", callback_data="cbbasics")
             ],[
-            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="cbsudo"),
-            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="cbowner")
+            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="cbsudos"),
+            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="cbowners")
             ],[
             InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
             InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
@@ -54,13 +54,13 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton("🤔 How To Use Me 🤔", callback_data="cbhowtouse")
+            InlineKeyboardButton("🤔 How To Use Me 🤔", callback_data="cbhowtouses")
             ],[
-            InlineKeyboardButton("👷🏻 Admin Command", callback_data="cbadmin"),
-            InlineKeyboardButton("📚 Basic Command", callback_data="cbbasic")
+            InlineKeyboardButton("👷🏻 Admin Command", callback_data="cbadmins"),
+            InlineKeyboardButton("📚 Basic Command", callback_data="cbbasics")
             ],[
-            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="cbsudo"),
-            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="cbowner")
+            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="cbsudos"),
+            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="cbowners")
             ],[
             InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
             InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
