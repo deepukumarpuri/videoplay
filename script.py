@@ -36,19 +36,11 @@ ____________________------------______________________
 Enjoy 😌️❤️!"""
 
 
-HELP_TXT = """ ✨ Hi {}, 
+    HELP_TXT = """ ✨ Hi {}, 
 
 Here is the Help Menu For This Bot 😊!
 
 """
-
-
-
-    STATUS_TXT = """<b>Total Files:</b> <code>{}</code>
-<b>Total Users:</b> <code>{}</code>
-<b>Total Chats:</b> <code>{}</code>
-<b>Used Storage:</b> <code>{}</code> MiB
-<b>Free Storage:</b> <code>{}</code> MiB"""
 
 
 
