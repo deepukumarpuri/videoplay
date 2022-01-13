@@ -113,10 +113,10 @@ async def start(client, message):
 
 # Help Menu
 
-@Client.on_message(command(["help", f"help@{BOT_USERNAME}"]))
+@Client.on_message(command(["hiyaaaa", f"hiyaaaa@{BOT_USERNAME}"]))
 async def help(_, message: Message):
     usr_cmd = message.text.split("_")[-1]
-    if usr_cmd == "/help":
+    if usr_cmd == "/hiyaaaa":
         chat_id = message.chat.id
         if not await db.is_user_exist(chat_id):
             await db.add_user(chat_id)
