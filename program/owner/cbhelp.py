@@ -14,11 +14,11 @@ async def started(_, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton("🤔 How To Use Me 🤔", callback_data="cbhowtouse")
             ],[
-            InlineKeyboardButton("👷🏻 Admin Command", callback_data="cbadmin"),
-            InlineKeyboardButton("📚 Basic Command", callback_data="cbbasic")
+            InlineKeyboardButton("👷🏻 Admin Command", callback_data="cbadmins"),
+            InlineKeyboardButton("📚 Basic Command", callback_data="cbbasics")
             ],[
-            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="cbsudo"),
-            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="cbowner")
+            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="cbsudos"),
+            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="cbowners")
             ],[
             InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
             InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
