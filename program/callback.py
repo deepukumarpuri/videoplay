@@ -193,44 +193,6 @@ async def cbmenu(_, query: CallbackQuery):
     else:
         await query.answer("❌ nothing is currently streaming", show_alert=True)
 
-@Client.on_callback_query(filters.regex("cbowner"))
-async def cbbasic(_, query: CallbackQuery):
-    await query.edit_message_text(
-        f"""❄️ Here is The Owner Commands ❄️
-
-» /uptime - Check Bot Up Times
-» /status - Check Bot Stats
-» /ban_user (user id) - Ban The User
-» /unban_user (user id)  - Unban The User
-» /banned - Check Banned User
-
-More Feature Coming Soon
-
-⚡️ __Powered by {BOT_NAME} AI__""",
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
-        ),
-    )
-
-@Client.on_callback_query(filters.regex("dkvideo"))
-async def cbbasic(_, query: CallbackQuery):
-    await query.edit_message_text(
-        f"""🛡 **Here is All Tutorial Video Of This Bot** 🛡
-
-📮 How To Play Video in VC Part 1 - {VIDEO_LINK}
-
-🎦 Video Details :- ✨ In This Video I Tell You How To Add Bot And Userbot in Group\n.How To ⏸ Pause, ▶️ Resume, 🔇 Mute, 🔊 Unmute, ⏹ Stop, ⏩ Skip And How To Control Song/Video Volume ✨
-
-⚡️ Tutorial Video Link :- IN HINDI :- {VIDEO_LINK} IN ENGLISH :- {EN_VIDEO_LINK}
-
-❤️ Like This 🎦 Video And Subscrbie My Channel
-
-⚡️ __Powered by {BOT_NAME} AI__""",
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔙 Go Back", callback_data="cbcmds")]]
-        ),
-    )
-
 
 @Client.on_callback_query(filters.regex("cls"))
 async def close(_, query: CallbackQuery):
