@@ -5,7 +5,7 @@ class Script(object):
 
 💡 Find Out All The Bot's Commands And How They Work By Clicking On The » 📚 Commands Button!
 
-🔖 To Know How to Use This Bot, Please Click On The » ❓ Basic Guide button!\n\n You Can Also Watch This Tutorial Video\n In English Voice :- https://youtu.be/dEqGW8Ir8zY \n In Hindi Voice :- """
+🔖 To Know How to Use This Bot, Please Click On The » ❓ Basic Guide button!\n\n You Can Also Watch This Tutorial Video\n In English Voice :- https://youtu.be/dEqGW8Ir8zY \n In Hindi Voice :- https://youtu.be/WegxZFKPZeI """
 
     GROUP_START_TXT = """ Hello {}, 
 
