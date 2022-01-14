@@ -5,7 +5,7 @@ class Script(object):
 
 💡 Find Out All The Bot's Commands And How They Work By Clicking On The » 📚 Commands Button!
 
-🔖 To Know How to Use This Bot, Please Click On The » ❓ Basic Guide button!\n\n You Can Also Watch This Tutorial Video\n In English Voice :- \n In Hindi Voice :- """
+🔖 To Know How to Use This Bot, Please Click On The » ❓ Basic Guide button!\n\n You Can Also Watch This Tutorial Video\n In English Voice :- https://youtu.be/dEqGW8Ir8zY \n In Hindi Voice :- """
 
     GROUP_START_TXT = """ Hello {}, 
 
@@ -13,7 +13,7 @@ My name is <a href=https://t.me/hhh>bhh</a>!
 
 I Am Most Powerful VC VIDEO PLAY BOT Use Me To Play Song/Video in VC
 
-🔆 If You Don't Know How To Use Me Watch This Video 🔆\nIn English Voice :- \n In Hindi Voice :- """
+🔆 If You Don't Know How To Use Me Watch This Video 🔆\nIn English Voice :- https://youtu.be/dEqGW8Ir8zY \n In Hindi Voice :- https://youtu.be/WegxZFKPZeI """
 
     VC_TXT = """Hello {},
 
@@ -21,7 +21,7 @@ My name is <a href=https://t.me/VC_VIDEO_PLAY_BOT>VC VIDEO PLAY BOT</a>!
 
 This Command For Group Add Me To Your With Click Below Button
 
-🔆 If You Don't Know How To Use Me Watch This Video 🔆\nIn English Voice :- \n In Hindi Voice :-  """
+🔆 If You Don't Know How To Use Me Watch This Video 🔆\nIn English Voice :- https://youtu.be/dEqGW8Ir8zY \n In Hindi Voice :- https://youtu.be/WegxZFKPZeI """
 
     G_VC_TXT = """ Hi {} 😉️! 
 
