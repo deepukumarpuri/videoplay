@@ -30,11 +30,11 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton("🤔 How To Use Me 🤔", callback_data="cbhowtouse")
             ],[
-            InlineKeyboardButton("👷🏻 Admin Command", callback_data="cbadmins"),
-            InlineKeyboardButton("📚 Basic Command", callback_data="cbbasics")
+            InlineKeyboardButton("👷🏻 Admin Command", callback_data="dkadmins"),
+            InlineKeyboardButton("📚 Basic Command", callback_data="dkbasics")
             ],[
-            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="cbsudos"),
-            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="cbowners")
+            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="dksudos"),
+            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="dkowners")
             ],[
             InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
             InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
@@ -56,11 +56,11 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton("🤔 How To Use Me 🤔", callback_data="cbhowtouse")
             ],[
-            InlineKeyboardButton("👷🏻 Admin Command", callback_data="cbadmins"),
-            InlineKeyboardButton("📚 Basic Command", callback_data="cbbasics")
+            InlineKeyboardButton("👷🏻 Admin Command", callback_data="dkadmins"),
+            InlineKeyboardButton("📚 Basic Command", callback_data="dkbasics")
             ],[
-            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="cbsudos"),
-            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="cbowners")
+            InlineKeyboardButton("🧙🏻 Sudo Command", callback_data="dksudos"),
+            InlineKeyboardButton("👨‍💻 Owner Command", callback_data="dkowners")
             ],[
             InlineKeyboardButton("📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"),
             InlineKeyboardButton("👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}")
