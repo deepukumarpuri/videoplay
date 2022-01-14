@@ -24,7 +24,7 @@ from config import *
 
 
 
-@Client.on_message(filters.command("help"))
+@Client.on_message(filters.command("helpsss"))
 async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [[
