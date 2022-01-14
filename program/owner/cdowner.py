@@ -9,7 +9,7 @@ from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerId
 
 
 
-@Client.on_callback_query(filters.regex("cbbasics"))
+@Client.on_callback_query(filters.regex("dkbasics"))
 async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""🏮 here is the basic commands:
@@ -39,7 +39,7 @@ async def cbbasic(_, query: CallbackQuery):
     )
 
 
-@Client.on_callback_query(filters.regex("cbadmins"))
+@Client.on_callback_query(filters.regex("dkadmins"))
 async def cbadmin(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""🏮 here is the admin commands:
@@ -61,7 +61,7 @@ async def cbadmin(_, query: CallbackQuery):
         ),
     )
 
-@Client.on_callback_query(filters.regex("cbsudos"))
+@Client.on_callback_query(filters.regex("dksudos"))
 async def cbsudo(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""🏮 here is the sudo commands:
@@ -81,7 +81,7 @@ async def cbsudo(_, query: CallbackQuery):
 
 
 
-@Client.on_callback_query(filters.regex("cbowners"))
+@Client.on_callback_query(filters.regex("dkowners"))
 async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""❄️ Here is The Owner Commands ❄️
