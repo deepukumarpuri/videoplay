@@ -105,15 +105,15 @@ async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""🛡 **Here is All Tutorial Video Of This Bot** 🛡
 
-📮 How To Play Video in VC Part 1 - {VIDEO_LINK}
+📮 **How To Play Video in VC Part 1** - {VIDEO_LINK}
 
-🎦 Video Details :- ✨ In This Video I Tell You How To Add Bot And Userbot in Group\n.How To ⏸ Pause, ▶️ Resume, 🔇 Mute, 🔊 Unmute, ⏹ Stop, ⏩ Skip And How To Control Song/Video Volume ✨
+🎦 **Video Details :- ✨ In This Video I Tell You How To Add Bot And Userbot in Group\n.How To ⏸ Pause, ▶️ Resume, 🔇 Mute, 🔊 Unmute, ⏹ Stop, ⏩ Skip And How To Control Song/Video Volume** ✨
 
-⚡️ Tutorial Video Link :- IN HINDI :- {VIDEO_LINK} IN ENGLISH :- {EN_VIDEO_LINK}
+⚡️ **Tutorial Video Link** :- \nIN HINDI :- {VIDEO_LINK} \nIN ENGLISH :- {EN_VIDEO_LINK}
 
-❤️ Like This 🎦 Video And Subscrbie My Channel
+❤️ **Like This 🎦 Video And Subscrbie My Channel**
 
-⚡️ __Powered by {BOT_NAME} AI__""",
+**⚡️ __Powered by {BOT_NAME} AI__**""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🔙 Go Back", callback_data="cbstart")]]
         ),
